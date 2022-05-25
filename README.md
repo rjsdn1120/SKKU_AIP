@@ -19,30 +19,29 @@
 ## 예시
 ## python main.py -mode train -mtype rlstm -gpu 1 -epochs 20 -aug 1 -saveName model ....
 ## -mode
-train인지 test인지 정하는 것입니다. 
+train인지 test인지 정하는 것입니다.  
 default=test
 ## -mtype
-어떤 모델로 할지 고르는 것입니다. 
-default=dConv 
+어떤 모델로 할지 고르는 것입니다.  
+default=dConv  
 직접 짠 resnet: -mtype lstm, resnet: -mtype rlstm, 3dConv: -mtype (안 적거나 앞에서 안한거)
 ## -gpu
-몇 번 gpu를 쓸지 정하는 것입니다.
+몇 번 gpu를 쓸지 정하는 것입니다.  
 default=0
 ## -epochs
 default=20
 ## -aug
-위에도 있었는데 0이면 resize만 1이면 Horizontalflip 추가
+위에도 있었는데 0이면 resize만 1이면 Horizontalflip 추가  
 default=0
 ## -saveName
-./models/{saveName} 에 저장됩니다.
+./models/{saveName} 에 저장됩니다.  
 default=Unix Time
 ## -lr
-초기 lr 지정 
+초기 lr 지정  
 default=1e-3
 ## -wdecay
-optimizer 파라미터로 넘어감
+optimizer 파라미터로 넘어감  
 default=1e-4
-
 # test 하는 방법
 ## 예시
 ## ptyhon main.py -mode test -gpu .... -mtype rlstm
