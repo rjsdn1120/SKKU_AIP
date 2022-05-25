@@ -1,5 +1,5 @@
 # 하이퍼파라미터 설명
-## argment로 epochs, augmentation 등을 수정 할 수 있습니다.
+## argument로 epochs, augmentation 등을 수정 할 수 있습니다.
 ## epochs
 ### 기본값은 20이고 조정가능합니다.
 ## augmentation 
@@ -18,15 +18,30 @@
 # train 하는 방법
 ## 예시
 ## python main.py -mode train -mtype rlstm -gpu 1 -epochs 20 -aug 1 -saveName model ....
-## -mode train인지 test인지 정하는 것입니다. 기본값=test
-## -mtype 어떤 모델로 할지 고르는 것입니다. 기본값 3dConv 
-### 직접 짠 resnet: -mtype lstm, resnet: -mtype rlstm, 3dConv: -mtype (안 적거나 앞에서 안한거)
-## -gpu 몇 번 gpu를 쓸지 정하는 것입니다. 기본값=0
-## -epochs 에폭 수
-## -aug 위에도 있었는데 0이면 resize만 1이면 Horizontalflip 추가
-## -saveName train할때 어떤 경로에 저장할지; ./models/{saveName} 에 저장됩니다
-## -lr 초기 lr 지정 기본값 1e-3
-## -wdecay optimizer 파라미터로 넘어감 기본값 1e-4
+## -mode
+train인지 test인지 정하는 것입니다. 
+default=test
+## -mtype
+어떤 모델로 할지 고르는 것입니다. 
+default=dConv 
+직접 짠 resnet: -mtype lstm, resnet: -mtype rlstm, 3dConv: -mtype (안 적거나 앞에서 안한거)
+## -gpu
+몇 번 gpu를 쓸지 정하는 것입니다.
+default=0
+## -epochs
+default=20
+## -aug
+위에도 있었는데 0이면 resize만 1이면 Horizontalflip 추가
+default=0
+## -saveName
+./models/{saveName} 에 저장됩니다.
+default=Unix Time
+## -lr
+초기 lr 지정 
+default=1e-3
+## -wdecay
+optimizer 파라미터로 넘어감
+default=1e-4
 
 # test 하는 방법
 ## 예시
@@ -35,4 +50,3 @@
 *custom resnet(직접짠거) + LSTM, -mtype lstm
 *torchvision resnet + LSTM, -mtype rlstm
 *3d convlution, 위 2개 제외
-## -mtype을 지정하면 해당하는 
